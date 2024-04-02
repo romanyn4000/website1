@@ -1,0 +1,90 @@
+body{
+    background-color: rgb(237, 231, 231);
+    padding: 10px;
+}
+.container{
+    display: grid;
+    grid-template: minmax(30%) minmax(70%)/repeat(10, 1fr);
+    grid-template-areas: 
+    ". tab tab tab tab tab tab tab tab ."
+    ". . posts posts posts posts posts posts . . "
+}
+.tab {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #e5dbdb;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #4a3f3f;
+}
+
+.tab:hover {
+    background-color: #f4e9e9;
+    color: #b69393;
+}
+
+.tab-container{
+    grid-area: tab;
+    display: flex;
+    flex-wrap: wrap;
+    /* margin-left: auto;
+    margin-right: auto; */
+    justify-content: center;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container{
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+.posts{
+    display: none;
+}
+
+.posts-container{
+    grid-area: posts;
+    position: relative;
+    padding-left: 10%;
+}
+
+.posts{
+    flex-direction: column;
+    /* padding-left: 5%; */
+    /* position: absolute; */
+    /* top: 27%;
+    left: 10%;
+    right: 10%; */
+    margin-top: 20px;
+    border-top: 1px solid #bda7a7;
+    /* padding-top: 20px; */
+    
+}
+
+ .posts p{
+    line-height: 30px;
+    padding: 10px;
+    color: #4a3f3f;
+    /* border-bottom:  1px solid #bda7a7; */
+    /* border-right:  1px solid #bda7a7; */
+    border-left:  2px solid #bda7a7;
+    background-color: #f0dfdf74;
+}
